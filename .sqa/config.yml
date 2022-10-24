@@ -1,0 +1,56 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.4
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/grycap/GCore:
+      branch: master
+      repo: https://github.com/grycap/GCore
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/grycap/GCore git:
+        commands:
+        - /usr/bin/env sh .sqa/script.flaky-gold-chameleon.sh
+        container: qc.acc_lousy-gamboge-lobster
+  QC.Doc:
+    repos:
+      github.com/grycap/GCore find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.nippy-rose-mouse.sh
+        container: qc.doc_nerdy-pumpkin-tortoise
+      github.com/grycap/GCore git:
+        commands:
+        - /usr/bin/env sh .sqa/script.pasty-cerulean-shrew.sh
+        container: qc.doc_skimpy-tomato-pig
+      github.com/grycap/GCore markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.hilly-vermilion-newt.sh
+        container: qc.doc_wheezy-khaki-armadillo
+  QC.Lic:
+    repos:
+      github.com/grycap/GCore licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.freaky-amaranth-gerbil.sh
+        container: qc.lic_paltry-carmine-chihuahua
+  QC.Sty:
+    repos:
+      github.com/grycap/GCore jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.stuffy-green-falcon.sh
+        container: qc.sty_trippy-linen-whippet
+      github.com/grycap/GCore stylelint:
+        commands:
+        - /usr/bin/env sh .sqa/script.bluesy-xanthic-newfoundland.sh
+        container: qc.sty_stuffy-wheat-birman
+  QC.Ver:
+    repos:
+      github.com/grycap/GCore get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.boozy-purple-tapir.sh
+        container: qc.ver_skanky-thistle-chipmunk
+timeout: 1800
