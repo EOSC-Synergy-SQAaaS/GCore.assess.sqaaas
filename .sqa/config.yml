@@ -15,42 +15,52 @@ sqa_criteria:
     repos:
       github.com/grycap/GCore git:
         commands:
-        - /usr/bin/env sh .sqa/script.ready-myrtle-skunk.sh
-        container: qc.acc_beady-chocolate-tortoise
+        - /usr/bin/env sh .sqa/script.sunny-corn-dane.sh
+        container: qc.acc_shabby-orange-ostrich
   QC.Doc:
     repos:
       github.com/grycap/GCore find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.nippy-flax-frog.sh
-        container: qc.doc_shaky-charcoal-mammoth
+        - /usr/bin/env sh .sqa/script.sleepy-myrtle-caiman.sh
+        container: qc.doc_lanky-olive-fowl
       github.com/grycap/GCore git:
         commands:
-        - /usr/bin/env sh .sqa/script.gamy-lilac-dragonfly.sh
-        container: qc.doc_thirsty-purple-shrimp
+        - /usr/bin/env sh .sqa/script.hilly-lilac-saola.sh
+        container: qc.doc_hilly-harlequin-uguisu
       github.com/grycap/GCore markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.scaly-zucchini-angora.sh
-        container: qc.doc_lovely-black-flounder
+        - /usr/bin/env sh .sqa/script.hasty-red-worm.sh
+        container: qc.doc_breezy-olivine-chicken
   QC.Lic:
     repos:
       github.com/grycap/GCore licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.bluesy-sepia-havanese.sh
-        container: qc.lic_lanky-amethyst-coral
+        - /usr/bin/env sh .sqa/script.sloppy-smalt-kakapo.sh
+        container: qc.lic_hilly-mauve-boar
+  QC.Met:
+    repos:
+      github.com/grycap/GCore cff-converter-python:
+        commands:
+        - /usr/bin/env sh .sqa/script.greasy-celadon-discus.sh
+        container: qc.met_shabby-charcoal-civet
+      github.com/grycap/GCore validate_codemeta:
+        commands:
+        - /usr/bin/env sh .sqa/script.blurry-lilac-badger.sh
+        container: qc.met_snappy-linen-dragonfly
   QC.Sty:
     repos:
       github.com/grycap/GCore jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.smelly-seashell-chameleon.sh
-        container: qc.sty_randy-fuchsia-chicken
+        - /usr/bin/env sh .sqa/script.chewy-malachite-turtle.sh
+        container: qc.sty_gimpy-silver-liger
       github.com/grycap/GCore stylelint:
         commands:
-        - /usr/bin/env sh .sqa/script.scanty-jade-lizard.sh
-        container: qc.sty_blurry-yellow-alligator
+        - /usr/bin/env sh .sqa/script.slaphappy-cardinal-quetzal.sh
+        container: qc.sty_pokey-alizarin-moose
   QC.Ver:
     repos:
       github.com/grycap/GCore get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.cheeky-peach-lynx.sh
-        container: qc.ver_woolly-malachite-foxhound
+        - /usr/bin/env sh .sqa/script.slaphappy-mauve-wolverine.sh
+        container: qc.ver_tacky-pumpkin-lobster
 timeout: 1800
